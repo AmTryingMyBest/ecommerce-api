@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const sellers = require("./routes/sellers");
+const buyers = require("./routes/buyers");
+const inventory = require("./routes/inventory");
 const express = require("express");
 const app = express();
 
@@ -10,6 +12,8 @@ mongoose
 
 app.use(express.json());
 app.use("/api/sellers", sellers);
+app.use("/api/buyers", buyers);
+app.use("/api/inventory", inventory);
 
 const port = process.env.port || 3000;
 app.listen(port, () => console.log(`Listening on port ${port} ...`));
