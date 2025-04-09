@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
     quantity: req.body.quantity,
     category: req.body.category,
     price: req.body.price,
-    seller: { _id: seller._id, name: seller.name },
+    seller: seller._id,
   });
 
   inventory = await inventory.save();
